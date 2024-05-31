@@ -30,7 +30,7 @@ build:
     just elaborate
 
 
-run: 
+__run: 
     #!/bin/bash
     cd {{TESTBENCH_DIR}}
     dump_dir=../{{BUILD_DIR}}/{{DUMP_DIR}}
@@ -41,6 +41,17 @@ run:
         ghdl -r --std=08 --workdir=../{{BUILD_DIR}} $tb_name --vcd=$vcd_file
     done
     cd ..
+
+
+__start_gtkwave:
+    #!/bin/bash
+    gtkwave {{BUILD_DIR}}/{{DUMP_DIR}}/*.vcd
+
+run:
+    just build
+    just __run
+    just __start_gtkwave
+
 
 clean:
     #!/bin/bash

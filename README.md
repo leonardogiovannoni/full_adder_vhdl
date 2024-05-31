@@ -26,7 +26,7 @@ To use this template, follow these steps:
    - Replace `./testbench/full_adder_tb.vhd` with your own testbench files.
 
 3. **Set Up Development Environment:**
-   - Ensure you have a VHDL simulator and tools installed (e.g., GHDL, ModelSim).
+   - Ensure you have a GHDL and GTKWave installed on your system.
    - Install `just` to manage your project-specific commands.
    - Configure your editor with the VHDL Language Server using the `vhdl_ls.toml` file for improved VHDL development support.
 
